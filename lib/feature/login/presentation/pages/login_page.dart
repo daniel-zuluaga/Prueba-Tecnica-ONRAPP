@@ -60,14 +60,14 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 SizedBox(height: 3.h),
                 TextFieldWidget(
-                  hintText: 'Email',
+                  hintText: 'Correo electrónico',
                   controller: _emailController,
                   isPassword: false,
                 ),
                 SizedBox(height: 1.h),
                 TextFieldWidget(
                   controller: _passwordController,
-                  hintText: 'Password',
+                  hintText: 'Contraseña',
                   isPassword: isPasswordVisible,
                   suffixIcon: IconButton(
                     padding: EdgeInsets.only(right: 1.w),
@@ -114,7 +114,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   child: const Text(
-                    'Login',
+                    'Iniciar sesión',
                     style: TextStyle(color: Colors.black),
                   ),
                 ),
