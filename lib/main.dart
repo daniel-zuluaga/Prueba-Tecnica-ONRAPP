@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:loader_overlay/loader_overlay.dart';
+import 'package:prueba_tecnica_orn/core/config/helpers/injector/injector.dart';
 import 'package:prueba_tecnica_orn/core/router/routes.dart';
 import 'package:prueba_tecnica_orn/feature/login/presentation/bloc/login_bloc.dart';
+import 'package:prueba_tecnica_orn/feature/product/presentation/bloc/product_bloc.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  Injector.setup();
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -38,6 +43,9 @@ class MyApp extends StatelessWidget {
             providers: [
               BlocProvider<LoginBloc>(
                 create: (BuildContext context) => LoginBloc(),
+              ),
+              BlocProvider<ProductBloc>(
+                create: (BuildContext context) => ProductBloc(),
               ),
             ],
             child: MaterialApp.router(
