@@ -20,6 +20,7 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  late bool isPasswordVisible = false;
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +68,20 @@ class _LoginPageState extends State<LoginPage> {
                 TextFieldWidget(
                   controller: _passwordController,
                   hintText: 'Password',
-                  isPassword: false,
+                  isPassword: isPasswordVisible,
+                  suffixIcon: IconButton(
+                    padding: EdgeInsets.only(right: 1.w),
+                    onPressed: () {
+                      setState(() {
+                        isPasswordVisible = !isPasswordVisible;
+                      });
+                    },
+                    icon: Icon(
+                      isPasswordVisible
+                          ? Icons.visibility
+                          : Icons.visibility_off,
+                    ),
+                  ),
                 ),
                 SizedBox(height: 3.h),
                 ButtonWidget(

@@ -4,12 +4,18 @@ class TextFieldWidget extends StatelessWidget {
   final String hintText;
   final TextEditingController controller;
   final bool isPassword;
+  final Widget? prefixIcon;
+  final Widget? suffixIcon;
+  final TextInputAction? textInputAction;
 
   const TextFieldWidget({
     super.key,
     required this.hintText,
     required this.controller,
-    required this.isPassword
+    required this.isPassword,
+    this.prefixIcon,
+    this.suffixIcon,
+    this.textInputAction,
   });
 
   @override
@@ -23,7 +29,10 @@ class TextFieldWidget extends StatelessWidget {
       child: TextField(
         controller: controller,
         obscureText: isPassword,
+        textInputAction: textInputAction ?? TextInputAction.next,
         decoration: InputDecoration(
+          prefixIcon: prefixIcon,
+          suffixIcon: suffixIcon,
           contentPadding:
               const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
           hintText: hintText,
@@ -35,6 +44,9 @@ class TextFieldWidget extends StatelessWidget {
         style: TextStyle(
           color: Colors.grey.shade900,
         ),
+        onTapOutside: (event) {
+          FocusScope.of(context).unfocus();
+        },
       ),
     );
   }
