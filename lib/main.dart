@@ -9,7 +9,6 @@ import 'package:prueba_tecnica_orn/feature/product/presentation/bloc/product_blo
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
   Injector.setup();
   runApp(const MyApp());
 }
