@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_multi_formatter/flutter_multi_formatter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:prueba_tecnica_orn/core/router/app_routes.dart';
 import 'package:prueba_tecnica_orn/core/widgets/text_widget.dart';
@@ -47,7 +48,7 @@ class ListProductWidget extends StatelessWidget {
                 fontWeight: FontWeight.w400,
                 textAlign: TextAlign.start,
                 color: Colors.black,
-                maxLines: 4,
+                maxLines: 10,
               ),
               subtitle: Column(
                 children: [
@@ -64,7 +65,12 @@ class ListProductWidget extends StatelessWidget {
                   Align(
                     alignment: Alignment.centerLeft,
                     child: TextWidget(
-                      text: "\$${product.price.toStringAsFixed(2)}",
+                      text: "${toCurrencyString(
+                        product.price.toString(),
+                        mantissaLength: 2,
+                        leadingSymbol: r'$',
+                        useSymbolPadding: true,
+                      )} USD",
                       style: TextStyle(fontSize: 16.sp),
                       fontWeight: FontWeight.w400,
                       textAlign: TextAlign.start,
