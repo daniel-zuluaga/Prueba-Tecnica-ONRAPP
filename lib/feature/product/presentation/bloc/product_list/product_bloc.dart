@@ -2,7 +2,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:prueba_tecnica_orn/core/config/helpers/injector/injector.dart';
 import 'package:prueba_tecnica_orn/feature/product/domain/entities/product_entity.dart';
-import 'package:prueba_tecnica_orn/feature/product/domain/usecases/get_all_product.dart';
+import 'package:prueba_tecnica_orn/feature/product/domain/usecases/get_all_product_use_case.dart';
 
 part 'product_event.dart';
 part 'product_state.dart';

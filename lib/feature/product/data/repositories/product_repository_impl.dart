@@ -23,4 +23,14 @@ class ProductRepositoryImpl implements ProductRepository {
       return Left(invalidData);
     }
   }
+
+  @override
+  Future<Either<InvalidData, ProductEntity>> fetchProductById({required String id}) async {
+    try {
+      final ProductEntity response = await productsDataSource.fetchProductById(id: id);
+      return Right(response);
+    } on InvalidData catch (invalidData) {
+      return Left(invalidData);
+    }
+  }
 }

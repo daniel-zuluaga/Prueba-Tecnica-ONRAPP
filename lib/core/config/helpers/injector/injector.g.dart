@@ -15,6 +15,8 @@ class _$Injector extends Injector {
           productsDataSource: c.resolve<ProductDataSource>()))
       ..registerFactory((c) => ProductDataSource())
       ..registerFactory((c) => GetAllProductsUseCase(
+          productsRepository: c.resolve<ProductRepository>()))
+      ..registerFactory((c) => GetByIdProductsUseCase(
           productsRepository: c.resolve<ProductRepository>()));
   }
 }

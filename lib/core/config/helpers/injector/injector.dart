@@ -2,7 +2,8 @@ import 'package:kiwi/kiwi.dart';
 import 'package:prueba_tecnica_orn/feature/product/data/datasources/product_data_source.dart';
 import 'package:prueba_tecnica_orn/feature/product/data/repositories/product_repository_impl.dart';
 import 'package:prueba_tecnica_orn/feature/product/domain/repositories/product_repository.dart';
-import 'package:prueba_tecnica_orn/feature/product/domain/usecases/get_all_product.dart';
+import 'package:prueba_tecnica_orn/feature/product/domain/usecases/get_all_product_use_case.dart';
+import 'package:prueba_tecnica_orn/feature/product/domain/usecases/get_by_id_product_use_case.dart';
 
 part 'injector.g.dart';
 
@@ -37,5 +38,6 @@ abstract class Injector {
   @Register.factory(ProductRepository, from: ProductRepositoryImpl)
   @Register.factory(ProductDataSource)
   @Register.factory(GetAllProductsUseCase)
+  @Register.factory(GetByIdProductsUseCase)
   void _configureProductsFactories();
 }
