@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:loader_overlay/loader_overlay.dart';
 import 'package:prueba_tecnica_orn/core/config/helpers/injector/injector.dart';
 import 'package:prueba_tecnica_orn/core/router/routes.dart';
-import 'package:prueba_tecnica_orn/feature/login/presentation/bloc/login_bloc.dart';
-import 'package:prueba_tecnica_orn/feature/product/presentation/bloc/product_detail/product_detail_bloc.dart';
-import 'package:prueba_tecnica_orn/feature/product/presentation/bloc/product_list/product_bloc.dart';
+import 'package:prueba_tecnica_orn/mutli_provider_bloc.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 void main() {
@@ -20,7 +17,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ResponsiveSizer(
-      builder: (BuildContext context, Orientation orientation, ScreenType screenType) {
+      builder: (BuildContext context, Orientation orientation,
+          ScreenType screenType) {
         return GlobalLoaderOverlay(
           overlayWidgetBuilder: (progress) {
             return Container(
@@ -39,18 +37,7 @@ class MyApp extends StatelessWidget {
               ),
             );
           },
-          child: MultiBlocProvider(
-            providers: [
-              BlocProvider<LoginBloc>(
-                create: (BuildContext context) => LoginBloc(),
-              ),
-              BlocProvider<ProductBloc>(
-                create: (BuildContext context) => ProductBloc(),
-              ),
-              BlocProvider<ProductDetailBloc>(
-                create: (BuildContext context) => ProductDetailBloc(),
-              ),
-            ],
+          child: PTMultiBlocProvider(
             child: MaterialApp.router(
               theme: ThemeData(
                 scaffoldBackgroundColor: Colors.white,
