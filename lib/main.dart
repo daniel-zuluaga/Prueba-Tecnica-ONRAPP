@@ -5,7 +5,8 @@ import 'package:loader_overlay/loader_overlay.dart';
 import 'package:prueba_tecnica_orn/core/config/helpers/injector/injector.dart';
 import 'package:prueba_tecnica_orn/core/router/routes.dart';
 import 'package:prueba_tecnica_orn/feature/login/presentation/bloc/login_bloc.dart';
-import 'package:prueba_tecnica_orn/feature/product/presentation/bloc/product_bloc.dart';
+import 'package:prueba_tecnica_orn/feature/product/presentation/bloc/product_detail/product_detail_bloc.dart';
+import 'package:prueba_tecnica_orn/feature/product/presentation/bloc/product_list/product_bloc.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 void main() {
@@ -45,6 +46,9 @@ class MyApp extends StatelessWidget {
               ),
               BlocProvider<ProductBloc>(
                 create: (BuildContext context) => ProductBloc(),
+              ),
+              BlocProvider<ProductDetailBloc>(
+                create: (BuildContext context) => ProductDetailBloc(),
               ),
             ],
             child: MaterialApp.router(

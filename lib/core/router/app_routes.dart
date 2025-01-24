@@ -11,4 +11,6 @@ class AppRoutes {
 
   /// The home route.
   static const String home = '/home';
+
+  static const String productDetail = '/product-detail';
 }

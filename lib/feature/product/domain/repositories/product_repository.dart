@@ -6,4 +6,5 @@ import 'package:prueba_tecnica_orn/feature/product/domain/entities/product_entit
 
 abstract class ProductRepository {
   Future<Either<InvalidData, List<ProductEntity>>> fetchProducts();
+  Future<Either<InvalidData, ProductEntity>> fetchProductById({required String id});
 }
