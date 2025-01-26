@@ -8,6 +8,7 @@ This project implements a Clean Architecture using Flutter, with state managemen
 
 The project structure is organised according to Clean Architecture principles:
 
+```
 lib/
 ├── core/ # Shared code and common utilities
 ├── feature/
@@ -16,6 +17,7 @@ lib/
 │ ├── domain/ # Entities and use cases
 │ └─── presentation/ # Displays, widgets and BLoC
 └└─── main.dart # Entry point of the application
+```
 
 ## Technologies used
 
@@ -28,6 +30,12 @@ lib/
 - Mocktail: Testing framework to simulate dependencies.
 
 - Either.dart: Error handling and results in use cases.
+
+## Branch Information
+This repository contains two branches:
+
+1. main (default branch): This is the primary branch where the complete and up-to-date version of the project is located. You can run the application directly from this branch.
+2. develop: This branch is also updated and contains the latest development changes. However, for running the final version of the project, it is recommended to use the main branch.
 
 ## Best Practices Implemented
 
