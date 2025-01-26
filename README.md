@@ -8,6 +8,7 @@ This project implements a Clean Architecture using Flutter, with state managemen
 
 The project structure is organised according to Clean Architecture principles:
 
+```
 lib/
 ├── core/ # Shared code and common utilities
 ├── feature/
@@ -16,6 +17,7 @@ lib/
 │ ├── domain/ # Entities and use cases
 │ └─── presentation/ # Displays, widgets and BLoC
 └└─── main.dart # Entry point of the application
+```
 
 ## Technologies used
 
