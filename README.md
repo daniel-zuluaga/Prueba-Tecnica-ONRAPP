@@ -31,6 +31,12 @@ lib/
 
 - Either.dart: Error handling and results in use cases.
 
+## Branch Information
+This repository contains two branches:
+
+1. main (default branch): This is the primary branch where the complete and up-to-date version of the project is located. You can run the application directly from this branch.
+2. develop: This branch is also updated and contains the latest development changes. However, for running the final version of the project, it is recommended to use the main branch.
+
 ## Best Practices Implemented
 
 - Modularity: Each layer (data, domain, presentation) is well separated.
